@@ -12,6 +12,11 @@ app.use(express.json());
 //connect to mongoose
 mongoose.connect("mongodb+srv://nguyenlinh:Nhanjom@cluster0.olh0z3e.mongodb.net/find_ym_1")
 
+
+
+app.get('/', (req, res) => {
+  res.send('Hello, this is the root route!');
+}); 
 app.use("/", require("./routes/homeRoute"))
 app.listen(PORT, () => {
     console.log(`Server is running o port ${PORT}`);
